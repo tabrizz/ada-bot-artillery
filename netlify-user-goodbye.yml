@@ -1,0 +1,9 @@
+config:
+  target: "https://ada-serverless-functions.netlify.com/.netlify/functions"
+  phases:
+    - duration: 30
+      arrivalRate: 10
+scenarios:
+  - flow:
+      - get:
+          url: "/gifResponse?query=adios"

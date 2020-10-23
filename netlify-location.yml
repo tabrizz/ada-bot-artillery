@@ -1,0 +1,9 @@
+config:
+  target: "https://ada-serverless-functions.netlify.com/.netlify/functions"
+  phases:
+    - duration: 30
+      arrivalRate: 10
+scenarios:
+  - flow:
+      - get:
+          url: "/paymentLocations?latitude=-12.076557&longitude=-75.213813&bank=interbank"

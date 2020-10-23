@@ -1,0 +1,15 @@
+config:
+  target: "https://ada-serverless-functions.netlify.com/.netlify/functions"
+  phases:
+    - duration: 30
+      arrivalRate: 10
+  payload:
+    path: "service.csv"
+    fields:
+      - "number"
+scenarios:
+  - flow:
+      - post:
+          url: "/debts"
+          json:
+            IdNroServicio: "{{number}}"

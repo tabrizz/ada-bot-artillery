@@ -1,0 +1,9 @@
+config:
+  target: "https://ada-bot.netlify.com/.netlify/functions"
+  phases:
+    - duration: 60
+      arrivalRate: 20
+scenarios:
+  - flow:
+      - post:
+          url: "/webhook"

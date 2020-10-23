@@ -1,0 +1,21 @@
+config:
+  target: "https://us-central1-ada-bot-1b3d7.cloudfunctions.net"
+  phases:
+    - duration: 15
+      arrivalRate: 5
+  payload:
+    path: "service.csv"
+    fields:
+      - "fullname"
+      - "dni"
+      - "location"
+      - "description"
+scenarios:
+  - flow:
+      - post:
+          url: "/storeIncidents"
+          json:
+            fullname: "{{fullname}}"
+            dni: "{{dni}}"
+            location: "{{location}}"
+            description: "{{description}}"
